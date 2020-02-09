@@ -1,5 +1,7 @@
 extends Node
 
+onready var _label = get_parent().get_node("VBoxContainer/Label")
+
 const SQLite = preload("res://addons/godot-sqlite/bin/gdsqlite.gdns")
 var db
 #var db_name = "user://test"
@@ -71,6 +73,8 @@ func example_of_basic_database_querying():
 	selected_array = db.select_rows(table_name, select_condition, ["*"])
 	print("condition: " + select_condition)
 	print("result: ", selected_array)
+
+	_label.text += "\n" + to_json(selected_array[0])
 
 	# Delete the employee named Olga
 	db.delete_rows(table_name, "name = 'Olga'")
