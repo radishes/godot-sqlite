@@ -84,6 +84,15 @@ Exports the database structure and content to export_path.json as a backup or fo
 
 - Boolean success = **delete_rows(** String table_name, String query_conditions **)**
 
+# What games/tools use this plugin?
+
+This is an incomplete list of (un)released games/tools that are using this plugin:
+
+- [SQLiteDetective](https://gaidamakua.itch.io/sqlitedetective)
+- [Trip the Ark Fantastic](https://www.tripthearkfantastic.com/)
+
+*Are you using godot-sqlite? Would you like to be on this list? Please open an issue with a link to your game or tool and you'll be added asap.*
+
 # How to export?
 
 All json- and db-files should be part of the exact same folder (demo/data in the case of the demo-project). During export this folder should be copied in its entirety to the demo/build-folder, in which the executable will be created by Godot's export command line utilities. Luckily, a Godot script called 'export_data.gd' can also found in the demo-project and allows to automatically copy the demo/data-folder's contents to the demo/build-folder.
