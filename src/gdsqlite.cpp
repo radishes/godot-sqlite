@@ -74,7 +74,10 @@ bool SQLite::open_db()
     }
     else
     {
-        Godot::print("Opened database successfully (" + path + ")");
+        if (verbose_mode)
+        {
+            Godot::print("Opened database successfully (" + path + ")");
+        }
     }
 
     /* Try to enable foreign keys. */
@@ -240,7 +243,10 @@ void SQLite::close_db()
         else
         {
             db = nullptr;
-            Godot::print("Closed database (" + path + ")");
+            if (verbose_mode)
+            {
+                Godot::print("Closed database (" + path + ")");
+            }
         }
     }
 }
